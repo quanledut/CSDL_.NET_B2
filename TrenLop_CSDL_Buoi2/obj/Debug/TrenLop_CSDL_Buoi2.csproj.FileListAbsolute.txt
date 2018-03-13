@@ -1,0 +1,10 @@
+C:\Users\Quan Le\source\repos\TrenLop_CSDL_Buoi2\TrenLop_CSDL_Buoi2\bin\Debug\TrenLop_CSDL_Buoi2.exe.config
+C:\Users\Quan Le\source\repos\TrenLop_CSDL_Buoi2\TrenLop_CSDL_Buoi2\bin\Debug\TrenLop_CSDL_Buoi2.exe
+C:\Users\Quan Le\source\repos\TrenLop_CSDL_Buoi2\TrenLop_CSDL_Buoi2\bin\Debug\TrenLop_CSDL_Buoi2.pdb
+C:\Users\Quan Le\source\repos\TrenLop_CSDL_Buoi2\TrenLop_CSDL_Buoi2\obj\Debug\TrenLop_CSDL_Buoi2.csprojResolveAssemblyReference.cache
+C:\Users\Quan Le\source\repos\TrenLop_CSDL_Buoi2\TrenLop_CSDL_Buoi2\obj\Debug\TrenLop_CSDL_Buoi2.Form1.resources
+C:\Users\Quan Le\source\repos\TrenLop_CSDL_Buoi2\TrenLop_CSDL_Buoi2\obj\Debug\TrenLop_CSDL_Buoi2.Properties.Resources.resources
+C:\Users\Quan Le\source\repos\TrenLop_CSDL_Buoi2\TrenLop_CSDL_Buoi2\obj\Debug\TrenLop_CSDL_Buoi2.csproj.GenerateResource.Cache
+C:\Users\Quan Le\source\repos\TrenLop_CSDL_Buoi2\TrenLop_CSDL_Buoi2\obj\Debug\TrenLop_CSDL_Buoi2.csproj.CoreCompileInputs.cache
+C:\Users\Quan Le\source\repos\TrenLop_CSDL_Buoi2\TrenLop_CSDL_Buoi2\obj\Debug\TrenLop_CSDL_Buoi2.exe
+C:\Users\Quan Le\source\repos\TrenLop_CSDL_Buoi2\TrenLop_CSDL_Buoi2\obj\Debug\TrenLop_CSDL_Buoi2.pdb
