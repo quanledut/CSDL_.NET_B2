@@ -141,7 +141,6 @@ namespace TrenLop_CSDL_Buoi2
         List<SV> myList;
         private QLSV_BLL bll = new QLSV_BLL();
         private DataHelpper dhp = new DataHelpper();
-        private List<SV> list;
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -153,16 +152,20 @@ namespace TrenLop_CSDL_Buoi2
         }
         public void bt_show_Click(object sender, EventArgs e)
         {
-            myList = bll.showDB();
-            dgv.DataSource = myList;
+            this.show();
         }
 
+        public void show()
+        {
+            dgv.DataSource = null;
+            dgv.DataSource = bll.showDB();
+        }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void bt_add_Click(object sender, EventArgs e)
+        /*private void bt_add_Click(object sender, EventArgs e)
         {
             DateTime d;
             d = datetime_birtday.Value;
@@ -177,30 +180,47 @@ namespace TrenLop_CSDL_Buoi2
             string gender;
             if (rb_male.Checked) gender = "True";
             else gender = "False";
-            string lop = cb_lop.SelectedItem.ToString();
+            string idlop = bll.get_IDLop(cb_lop.SelectedItem.ToString());
 
-            bll.Add(MSSV, name, date, gender, address, phone, email, dht, drl, lop);
-        }
-        private DataTable convert<T>(IList<T> data)
+            bll.Add(MSSV, name, date, gender, address, phone, email, dht, drl, idlop);
+        }*/
+        private void bt_add_Click(object sender, EventArgs e)
         {
-            PropertyDescriptorCollection props =
-                TypeDescriptor.GetProperties(typeof(T));
-            DataTable table = new DataTable();
-            for (int i = 0; i < props.Count; i++)
+            SV mySV = new SV();
+            AddForm addform = new AddForm();
+            if(addform.ShowDialog() == DialogResult.OK)
             {
-                PropertyDescriptor prop = props[i];
-                table.Columns.Add(prop.Name, prop.PropertyType);
+                mySV = addform.get();
+                mySV.idlop = bll.get_IDLop(mySV.idlop);
+                bll.Add(mySV);
             }
-            object[] values = new object[props.Count];
-            foreach (T item in data)
-            {
-                for (int i = 0; i < values.Length; i++)
-                {
-                    values[i] = props[i].GetValue(item);
-                }
-                table.Rows.Add(values);
-            }
-            return table;
+            this.show();
+           
+        }
+        private void dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            string mssv = dgv.SelectedRows[0].Cells["mssv"].Value.ToString();
+            SV sv = new SV();
+            sv = bll.get_SV_by_MSSV(mssv);
+            txt_address.Text = sv.address;
+            txt_name.Text = sv.namesv;
+            txt_MSSV.Text = sv.mssv;
+            txt_dht.Text = sv.dht.ToString();
+            txt_drl.Text = sv.drl.ToString();
+        }
+
+        private void bt_delete_Click(object sender, EventArgs e)
+        {
+            string mssv = dgv.SelectedRows[0].Cells["mssv"].Value.ToString();
+            mssv = mssv.Trim();
+            bll.deleteByMSSV(mssv);
+            this.show();
+        }
+
+        private void bt_update_Click(object sender, EventArgs e)
+        {
+            string mssv = 
         }
     }
     

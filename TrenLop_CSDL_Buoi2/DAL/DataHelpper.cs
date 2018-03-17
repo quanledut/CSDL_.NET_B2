@@ -12,17 +12,19 @@ namespace TrenLop_CSDL_Buoi2
     class DataHelpper
     {
         private string connection = @"Data Source=DESKTOP-THKH1SI\SQLSERVER;Initial Catalog=Bai1_NET;Integrated Security=True";
+        public string Connection{
+            get => connection;
+            set => connection = value;
+        }
+
         private SqlConnection cnn;
-        public string Connection { get => connection; set => connection = value; }
-        public SqlConnection Cnn { get => cnn; set => cnn = value; }
+       // public string Connection { get => connection; set => connection = value; }
         SqlCommand cmd = new SqlCommand();
 
         public void DB_ExecuteNonQuery(SqlCommand query)
         {
-            //cmd.CommandText = query;
-            //cmd = query;
+            cmd = query;
             cmd.Connection = cnn;
-            cmd.CommandText = "INSERT INTO"
             cnn.Open();
             cmd.ExecuteNonQuery();
             cnn.Close();
@@ -38,7 +40,7 @@ namespace TrenLop_CSDL_Buoi2
         public DataHelpper()
         {
             cnn = new SqlConnection(connection);
+           // cmd.Connection = cnn;
         }
-
     }
 }

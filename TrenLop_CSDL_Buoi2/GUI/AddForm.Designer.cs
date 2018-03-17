@@ -1,6 +1,6 @@
 ﻿namespace TrenLop_CSDL_Buoi2
 {
-    partial class Form1
+    partial class AddForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.submit_Btn = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cb_lop = new System.Windows.Forms.ComboBox();
             this.datetime_birtday = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rb_male = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.rb_female = new System.Windows.Forms.RadioButton();
-            this.txt_lop = new System.Windows.Forms.TextBox();
             this.txt_drl = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_email = new System.Windows.Forms.TextBox();
@@ -52,27 +53,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_MSSV = new System.Windows.Forms.TextBox();
-            this.cb_lop = new System.Windows.Forms.ComboBox();
-            this.txt_search = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.bt_search = new System.Windows.Forms.Button();
-            this.bt_delete = new System.Windows.Forms.Button();
-            this.bt_update = new System.Windows.Forms.Button();
-            this.bt_show = new System.Windows.Forms.Button();
-            this.bt_add = new System.Windows.Forms.Button();
-            this.dgv = new System.Windows.Forms.DataGridView();
+            this.cancle_Btn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cancle_Btn);
+            this.groupBox1.Controls.Add(this.submit_Btn);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.cb_lop);
             this.groupBox1.Controls.Add(this.datetime_birtday);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.txt_lop);
             this.groupBox1.Controls.Add(this.txt_drl);
-            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txt_email);
@@ -88,11 +82,43 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txt_MSSV);
-            this.groupBox1.Location = new System.Drawing.Point(75, 27);
+            this.groupBox1.Location = new System.Drawing.Point(46, 31);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(663, 206);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.Size = new System.Drawing.Size(663, 264);
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
+            // 
+            // submit_Btn
+            // 
+            this.submit_Btn.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.submit_Btn.Location = new System.Drawing.Point(357, 221);
+            this.submit_Btn.Name = "submit_Btn";
+            this.submit_Btn.Size = new System.Drawing.Size(125, 23);
+            this.submit_Btn.TabIndex = 39;
+            this.submit_Btn.Text = "Submit";
+            this.submit_Btn.UseVisualStyleBackColor = true;
+            this.submit_Btn.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(337, 178);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(25, 13);
+            this.label10.TabIndex = 38;
+            this.label10.Text = "Lop";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // cb_lop
+            // 
+            this.cb_lop.FormattingEnabled = true;
+            this.cb_lop.Items.AddRange(new object[] {
+            "14T",
+            "15T"});
+            this.cb_lop.Location = new System.Drawing.Point(379, 174);
+            this.cb_lop.Name = "cb_lop";
+            this.cb_lop.Size = new System.Drawing.Size(173, 21);
+            this.cb_lop.TabIndex = 37;
             // 
             // datetime_birtday
             // 
@@ -144,28 +170,12 @@
             this.rb_female.Text = "female";
             this.rb_female.UseVisualStyleBackColor = true;
             // 
-            // txt_lop
-            // 
-            this.txt_lop.Location = new System.Drawing.Point(379, 171);
-            this.txt_lop.Name = "txt_lop";
-            this.txt_lop.Size = new System.Drawing.Size(173, 20);
-            this.txt_lop.TabIndex = 24;
-            // 
             // txt_drl
             // 
             this.txt_drl.Location = new System.Drawing.Point(379, 149);
             this.txt_drl.Name = "txt_drl";
             this.txt_drl.Size = new System.Drawing.Size(173, 20);
             this.txt_drl.TabIndex = 23;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(333, 178);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(25, 13);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "Lop";
             // 
             // label8
             // 
@@ -290,117 +300,29 @@
             this.txt_MSSV.Size = new System.Drawing.Size(260, 20);
             this.txt_MSSV.TabIndex = 0;
             // 
-            // cb_lop
+            // cancle_Btn
             // 
-            this.cb_lop.FormattingEnabled = true;
-            this.cb_lop.Items.AddRange(new object[] {
-            "14T",
-            "15T"});
-            this.cb_lop.Location = new System.Drawing.Point(454, 448);
-            this.cb_lop.Name = "cb_lop";
-            this.cb_lop.Size = new System.Drawing.Size(121, 21);
-            this.cb_lop.TabIndex = 36;
-            this.cb_lop.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cancle_Btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancle_Btn.Location = new System.Drawing.Point(179, 221);
+            this.cancle_Btn.Name = "cancle_Btn";
+            this.cancle_Btn.Size = new System.Drawing.Size(125, 23);
+            this.cancle_Btn.TabIndex = 40;
+            this.cancle_Btn.Text = "Cancle";
+            this.cancle_Btn.UseVisualStyleBackColor = true;
             // 
-            // txt_search
-            // 
-            this.txt_search.Location = new System.Drawing.Point(187, 449);
-            this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(134, 20);
-            this.txt_search.TabIndex = 35;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(351, 449);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Sort";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // bt_search
-            // 
-            this.bt_search.Location = new System.Drawing.Point(93, 446);
-            this.bt_search.Name = "bt_search";
-            this.bt_search.Size = new System.Drawing.Size(75, 23);
-            this.bt_search.TabIndex = 33;
-            this.bt_search.Text = "Search";
-            this.bt_search.UseVisualStyleBackColor = true;
-            // 
-            // bt_delete
-            // 
-            this.bt_delete.Location = new System.Drawing.Point(382, 414);
-            this.bt_delete.Name = "bt_delete";
-            this.bt_delete.Size = new System.Drawing.Size(75, 23);
-            this.bt_delete.TabIndex = 32;
-            this.bt_delete.Text = "Delete";
-            this.bt_delete.UseVisualStyleBackColor = true;
-            this.bt_delete.Click += new System.EventHandler(this.bt_delete_Click);
-            // 
-            // bt_update
-            // 
-            this.bt_update.Location = new System.Drawing.Point(283, 415);
-            this.bt_update.Name = "bt_update";
-            this.bt_update.Size = new System.Drawing.Size(75, 23);
-            this.bt_update.TabIndex = 31;
-            this.bt_update.Text = "Update";
-            this.bt_update.UseVisualStyleBackColor = true;
-            this.bt_update.Click += new System.EventHandler(this.bt_update_Click);
-            // 
-            // bt_show
-            // 
-            this.bt_show.Location = new System.Drawing.Point(93, 417);
-            this.bt_show.Name = "bt_show";
-            this.bt_show.Size = new System.Drawing.Size(75, 23);
-            this.bt_show.TabIndex = 30;
-            this.bt_show.Text = "Show";
-            this.bt_show.UseVisualStyleBackColor = true;
-            this.bt_show.Click += new System.EventHandler(this.bt_show_Click);
-            // 
-            // bt_add
-            // 
-            this.bt_add.Location = new System.Drawing.Point(187, 417);
-            this.bt_add.Name = "bt_add";
-            this.bt_add.Size = new System.Drawing.Size(75, 23);
-            this.bt_add.TabIndex = 29;
-            this.bt_add.Text = "Add";
-            this.bt_add.UseVisualStyleBackColor = true;
-            this.bt_add.Click += new System.EventHandler(this.bt_add_Click);
-            // 
-            // dgv
-            // 
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(75, 239);
-            this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(663, 172);
-            this.dgv.TabIndex = 28;
-            this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
-            // 
-            // Form1
+            // AddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 521);
-            this.Controls.Add(this.cb_lop);
-            this.Controls.Add(this.txt_search);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.bt_search);
-            this.Controls.Add(this.bt_delete);
-            this.Controls.Add(this.bt_update);
-            this.Controls.Add(this.bt_show);
-            this.Controls.Add(this.bt_add);
-            this.Controls.Add(this.dgv);
+            this.ClientSize = new System.Drawing.Size(754, 366);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "AddForm";
+            this.Text = "AddForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -412,9 +334,7 @@
         private System.Windows.Forms.RadioButton rb_male;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RadioButton rb_female;
-        private System.Windows.Forms.TextBox txt_lop;
         private System.Windows.Forms.TextBox txt_drl;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_email;
@@ -431,14 +351,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_MSSV;
         private System.Windows.Forms.ComboBox cb_lop;
-        private System.Windows.Forms.TextBox txt_search;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button bt_search;
-        private System.Windows.Forms.Button bt_delete;
-        private System.Windows.Forms.Button bt_update;
-        private System.Windows.Forms.Button bt_show;
-        private System.Windows.Forms.Button bt_add;
-        private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button submit_Btn;
+        private System.Windows.Forms.Button cancle_Btn;
     }
 }
-

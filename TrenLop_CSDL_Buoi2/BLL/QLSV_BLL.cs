@@ -9,15 +9,40 @@ namespace TrenLop_CSDL_Buoi2
 {
     class QLSV_BLL
     {
-        
+        List<SV> myList;
         QLSV_DAL dal = new QLSV_DAL();
         public List<SV> showDB()
         {
-            return dal.getList();
+            if(myList!=null) myList.Clear();
+            myList = dal.getList();
+            return myList;
         }
-        public void Add(string MSSV, string NameSV, string BirthDay, string Gender, string Address, string Mobile, string Email, float DHT, int DRL, string IDLop)
+      
+        public void Add(SV mySV)
         {
-             dal.Add( MSSV,  NameSV,  BirthDay,  Gender,  Address,  Mobile,  Email,  DHT,  DRL,  IDLop);
+            string MSSV = mySV.mssv;
+            string NameSV = mySV.namesv;
+            string BirthDay = mySV.birthday;
+            bool Gender = mySV.gender;
+            string Address = mySV.address;
+            string Mobile = mySV.mobile;
+            string Email = mySV.email;
+            float DHT = mySV.dht;
+            int DRL = mySV.drl;
+            string IDLop = mySV.idlop;
+            dal.Add( MSSV,  NameSV,  BirthDay,  Gender,  Address,  Mobile,  Email,  DHT,  DRL, IDLop);
+        }
+        public string get_IDLop(string Lop)
+        {
+            return dal.get_IDLop(Lop);
+        }
+        public SV get_SV_by_MSSV(string mssv)
+        {
+            return dal.getSV(dal.select_SV(mssv));
+        }
+        public void deleteByMSSV(string mssv)
+        {
+            dal.delete(mssv);
         }
         
     }
